@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Daily Reports {% endblock %}
+
+{% block body %}
+{% block content %}
+
+<div>
+	<div class="row">
+		<div class="col-md-12">
+			{% for order in orders %}
+				<div class="yearly">
+					<!-- {% widthratio order.food_id.price 1 order.quantity  as result %}
+					{% with result|add:order.food_id.vat as sales %}
+						{{ sales|floatformat:2 }}
+					{% endwith %} -->
+					{{ count_year }} | {{ year_total }}
+				</div>
+				<div>
+					<!-- {% if sales == 'True' %}
+						{{ sales|date:Y }}
+					{% endif %} -->
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+{% endblock %}

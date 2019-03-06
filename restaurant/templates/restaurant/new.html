@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %} New Order {% endblock %}
+
+{% block body %}
+
+{% block content %}
+<!-- Breadcomb area Start-->
+<div class="breadcomb-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="breadcomb-list">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<div class="breadcomb-wp">
+								<div class="breadcomb-icon">
+									<i class="fa fa-pencil"></i>
+								</div>
+								<div class="breadcomb-ctn">
+									<h2>New Order</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Breadcomb area End-->
+
+ <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="form-example-wrap mg-t-30">
+            <div class="cmp-tb-hd cmp-int-hd">
+                <h2>New Order Form</h2>
+            </div>
+            <form class="form" method="post" action="{% url 'restaurant:new_order' %}">
+				{% csrf_token %}
+				<div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Customer Name</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.name|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Phone Number</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.phone|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Address</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.address|add_class:'form-control' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Delivery Date</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.delivery_date|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Food ID</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.food_id|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Payment Option</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.payment_option|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Cash</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.cash|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Quantity</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.quantity|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Order Date</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{{ form.order_date|add_class:'form-control input-sm' }}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="form-example-int form-horizental mg-t-15">
+	                <div class="form-group">
+	                    <div class="row">
+	                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+	                            <label class="hrzn-fm">Order Status</label>
+	                        </div>
+	                        <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                            <div class="nk-int-st">
+	                            	{% for radio in form.order_status %}
+	                            		{{ radio }}
+	                            	{% endfor %}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+                <div class="form-example-int mg-t-15">
+	                <div class="row">
+	                    <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+	                        <button class="btn btn-success notika-btn-success" type="submit" name="submit">Submit</button>
+	                    </div>
+	                </div>
+	            </div>
+			</form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}

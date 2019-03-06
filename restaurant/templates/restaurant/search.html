@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load maths %}
+
+{% block body %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+				<table class="table table-striped">
+                            <thead>
+                                <tr>
+									<th>Name</th>
+									<th>Phone</th>
+									<th>Address</th>
+									<th>Food</th>
+									<th>Payment Option</th>
+									<th>Quantity</th>
+									<th>Price GH¢</th>
+									<th>VAT</th>
+									<th>Total GH¢</th>
+									<th>Status</th>
+									<th>Date Ordered</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for search in found_order %}
+								<tr>
+									<td>{{ search.name }}</td>
+									<td>{{ search.phone }}</td>
+									<td>{{ search.address }}</td>
+									<td>{{ search.food_id.food_name }}</td>
+									<td>{{ search.payment_option }}</td>
+									<td>{{ search.quantity }}</td>
+									<td>{{ search.food_id.price }}</td>
+									<td>{{ search.food_id.vat }}</td>
+									<td>
+										{% with search.food_id.price|multiply:search.quantity as subtotal %}
+                                           {{ subtotal|addition:search.food_id.vat }}
+                                        {% endwith %}
+									</td>
+									{% if search.order_sataus == 'Confirm' %}
+										<td>{{ search.order_status }}</td>
+									{% elif search.order_status == 'Ready' %}
+										<td>{{ search.order_status }}</td>
+									{% elif search.order_status == 'Delivered' %}
+										<td>{{ search.order_status }}</td>
+									{% elif search.order_status == 'Cancelled' %}
+										<td>{{ search.order_status }}</td>
+									{% endif %}
+									<td>{{ search.order_date }}</td>
+								</tr>
+							{% empty %}
+								<p>No record found for this query!</p>
+							{% endfor %}
+                            </tbody>
+                        </table>
+					</div>
+				</div>
+			</div>
+
+
+{% endblock %}
+{% endblock %}

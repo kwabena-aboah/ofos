@@ -1,0 +1,33 @@
+/* SOURCES & CREDITS */
+
+/* Fonts */
+
+	Google Fonts (https://fonts.googleapis.com/)
+
+/* Icons */
+	Font Awesome (http://fontawesome.io/)
+	Notika Custom Icons (https://icomoon.io/app/)
+
+/* Scripts */
+
+	Sparklines (https://omnipotent.net/jquery.sparkline/#s-about)
+	Scrollbar (http://manos.malihu.gr/jquery-custom-content-scroller/)
+	TouchSpin (https://www.virtuosoft.eu/code/bootstrap-touchspin/)
+	Data Table (http://issues.wenzhixin.net.cn/bootstrap-table/)
+	Mapael (https://www.vincentbroute.fr/mapael/)
+	jvectormap (http://jvectormap.com/)
+	RangeSlider (http://ionden.com/a/plugins/ion.rangeSlider/en.html)
+	Cropper (https://fengyuanchen.github.io/cropper/)
+	Data Map (http://simplemaps.com/us)
+	CodeMirror (http://codemirror.net/index.html)
+	Chosen (https://harvesthq.github.io/chosen/)
+	datetimepicker (https://www.malot.fr/bootstrap-datetimepicker/)
+	dropzonejs (http://www.dropzonejs.com//)
+	summernote (http://summernote.org/)
+
+/* THANKS */
+
+	(First) Admin Theme: Colorlib
+	Website: https://colorlib.com
+
+
