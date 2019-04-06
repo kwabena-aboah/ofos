@@ -22,9 +22,9 @@ from django.conf.urls.static import static
 
 app_name = 'Project'
 urlpatterns = [
-    path('users/', include('users.urls', namespace='users')),
     path('admin/', admin.site.urls),
     path('', include('restaurant.urls')),
+    path('users/', include('users.urls')),
 ]
 
 

@@ -11,6 +11,6 @@ urlpatterns = [
 	path('foods/', views.foods, name='foods'),
 	path('new_food/', views.new_food, name='new_food'),
 	path('delete_food/<int:food_id>/', views.delete_food, name='delete_food'),
-	path('general_report/', views.general_report, name='general_report'),
+	# path('general_report/<str:order_date>/', views.general_report, name='general_report'),
 	# path('search/', views.search, name='search'),
 ]

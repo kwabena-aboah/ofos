@@ -103,21 +103,21 @@ def delete_food(request, food_id):
         return redirect('/foods', messages.error(request, 'Cannot delete food', 'alert-danger'))
 
 
-@login_required
-def general_report(request):
-    """Yearly reports on sales order"""
-    orders = Order.objects.all()
-    count_year = orders.order_date
-    total = (orders.food_id.price + orders.quantity) + orders.food_id.vat
-    year_total = sum(total)
-    while True:
-        if count_year == 'True':
-            return year_total
-        else:
-            return render('/general_report', messages.error('No reports for this year', 'alert-danger'))
+# @login_required
+# def general_report(request, order_date):
+#     """Yearly reports on sales order"""
+#     orders = Order.objects.get(order_date=order_date)
+#     count_year = orders.count()
+#     total = (orders.food_id.price + orders.quantity) + orders.food_id.vat
+#     year_total = sum(total)
+#     while True:
+#         if count_year == 'True':
+#             return year_total
+#         else:
+#             return render('/general_report', messages.error('No reports for this year', 'alert-danger'))
 
-    context = {"orders": orders, "count_year": count_year, "year_total": year_total }
-    return render(request, 'restaurant/reports.html', context)
+#     context = {"orders": orders, "count_year": count_year, "year_total": year_total }
+#     return render(request, 'restaurant/reports.html', context)
 
 
 # @login_required

@@ -8,20 +8,18 @@
 <div>
 	<div class="row">
 		<div class="col-md-12">
-			{% for order in orders %}
 				<div class="yearly">
 					<!-- {% widthratio order.food_id.price 1 order.quantity  as result %}
 					{% with result|add:order.food_id.vat as sales %}
 						{{ sales|floatformat:2 }}
 					{% endwith %} -->
-					{{ count_year }} | {{ year_total }}
+					<a href="{% if count_year.order_date == 'True' %}{{ count_year }}{{ year_total }}{% endif %}">{{ count_year }} | {{ year_total }}</a>
 				</div>
 				<div>
 					<!-- {% if sales == 'True' %}
 						{{ sales|date:Y }}
 					{% endif %} -->
 				</div>
-			{% endfor %}
 		</div>
 	</div>
 </div>
