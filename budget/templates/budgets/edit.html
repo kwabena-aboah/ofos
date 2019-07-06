@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Edit Budget{% endblock %}
+
+{% block body %}
+{% block content %}
+    <h2>Edit Budget</h2>
+
+    <form method="post" action=".">
+      {% csrf_token %}
+        <table class="form_table">
+            {{ form.as_table }}
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" name="confirmed" value="Save">
+                    or
+                    <a href="{% url 'budget:budget_budget_list' %}">Cancel</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <p class="deletion">
+        You can also
+        <a href="{% url 'budget:budget_budget_delete' budget.slug %}">delete</a>
+        this budget.
+    </p>
+{% endblock %}
+{% endblock %}

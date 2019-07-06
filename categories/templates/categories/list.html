@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Category List{% endblock %}
+
+{% block body %}
+{% block content %}
+    <h2>Category List</h2>
+
+    <p>
+        <a href="{% url 'categories:budget_category_add' %}">Add A Category</a>
+    </p>
+
+    <table class="report_table">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if categories %}
+                {% for category in categories %}
+                    <tr>
+                        <td><a href="{% url 'categories:budget_category_edit' category.slug %}">{{ category.name }}</a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>No categories found.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    {% include 'pagination.html' %}
+{% endblock %}
+{% endblock %}
