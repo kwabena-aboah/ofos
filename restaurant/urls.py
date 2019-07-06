@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import ReportView, general_report, ChartData
 
 app_name = 'restaurant'
 urlpatterns = [
@@ -11,6 +12,7 @@ urlpatterns = [
 	path('foods/', views.foods, name='foods'),
 	path('new_food/', views.new_food, name='new_food'),
 	path('delete_food/<int:food_id>/', views.delete_food, name='delete_food'),
-	# path('general_report/<str:order_date>/', views.general_report, name='general_report'),
-	# path('search/', views.search, name='search'),
+	path('reports/', ReportView.as_view(), name='reports'),
+	path('api/data/', general_report, name='api-data'),
+	path('api/chart/data/', ChartData.as_view()),
 ]

@@ -44,9 +44,13 @@ INSTALLED_APPS = [
     # myApps
     'restaurant.apps.RestaurantConfig',
     'users.apps.UsersConfig',
+    'budget.apps.BudgetConfig',
+    'categories.apps.CategoriesConfig',
+    'transactions.apps.TransactionsConfig',
     'Project',
     # addons
     'widget_tweaks',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -89,22 +93,22 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'restaurant',
-        'USER': 'root',
-        'PASSWORD': 'Kwabena13',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'restaurant',
+#         'USER': 'root',
+#         'PASSWORD': 'Kwabena13',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation

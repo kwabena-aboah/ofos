@@ -47,10 +47,11 @@
                             <thead>
                                 <tr>
 									<th>Name</th>
-									<th>Phone</th>
+									<th>Food</th>
+									<!-- <th>Phone</th>
 									<th>Address</th>
 									<th>Food</th>
-									<th>Payment Option</th>
+									<th>Payment Option</th> -->
 									<th>Quantity</th>
 									<th>Price GH¢</th>
 									<th>VAT</th>
@@ -64,10 +65,11 @@
                                 {% for order in orders %}
 								<tr>
 									<td>{{ order.name }}</td>
-									<td>{{ order.phone }}</td>
-									<td>{{ order.address }}</td>
+									<td><img src="{{ order.food_id.image.url }}" alt=""></td>
+									<!-- <td>{{ order.phone }}</td> -->
+									<!-- <td>{{ order.address }}</td>
 									<td>{{ order.food_id.food_name }}</td>
-									<td>{{ order.payment_option }}</td>
+									<td>{{ order.payment_option }}</td> -->
 									<td>{{ order.quantity }}</td>
 									<td>{{ order.food_id.price }}</td>
 									<td>{{ order.food_id.vat }}</td>
@@ -76,9 +78,7 @@
                                            {{ subtotal|addition:order.food_id.vat }}
                                         {% endwith %}
 									</td>
-									{% if order.order_sataus == 'Confirm' %}
-										<td>{{ order.order_status }}</td>
-									{% elif order.order_status == 'Ready' %}
+									{% if order.order_status == 'Ready' %}
 										<td>{{ order.order_status }}</td>
 									{% elif order.order_status == 'Delivered' %}
 										<td>{{ order.order_status }}</td>
@@ -100,10 +100,11 @@
                             <tfoot>
                                 <tr>
 									<th>Name</th>
-									<th>Phone</th>
+									<th>Food</th>
+									<!-- <th>Phone</th>
 									<th>Address</th>
 									<th>Food</th>
-									<th>Payment Option</th>
+									<th>Payment Option</th> -->
 									<th>Quantity</th>
 									<th>Price GH¢</th>
 									<th>VAT</th>
