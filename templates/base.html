@@ -5,11 +5,10 @@
 <html class="no-js" lang="eng">
 <head>
 	<meta charset="utf-8">
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" 
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>{% block title %}{% endblock %} | OFOS</title>
+	<meta name="description" content="For managing food orders, issuing bills and  reciepts">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="Food Ordering System" content="For managing food orders, issuing bills and  reciepts">
 	 <!-- favicon
 		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
@@ -54,9 +53,6 @@
 		============================================ -->
     <link rel="stylesheet" href="{% static 'css/wave/waves.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/wave/button.css' %}">
-    <!-- print CSS
-        ============================================ -->
-    <link type="text/css" rel="stylesheet" href="{% static 'css/print.css' %}" />
     <!-- dialog CSS
 		============================================ -->
     <link rel="stylesheet" href="{% static 'css/dialog/sweetalert2.min.css' %}">
@@ -82,7 +78,7 @@
 		============================================ -->
     <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
     <!-- EOF CSS INCLUDE -->
-    {% block css %}{% endblock %} 
+    {% block css %}{% endblock %}
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -144,11 +140,17 @@
                                         <li><a href="{% url 'restaurant:new_food' %}">Add Food</a></li>
                                     </ul>
                                 </li>
-                                <!-- <li><a data-toggle="collapse" data-target="#report" href="#">Report</a>
+                                <li><a data-toggle="collapse" data-target="#report" href="#">Report</a>
                                     <ul id="Report" class="collapse dropdown-header-top">
                                         <li><a href="">General</a></li>
                                     </ul>
-                                </li> -->
+                                </li>
+																<li><a data-toggle="collapse" data-target="#budget" href="#">Budget</a>
+                                    <ul id="Report" class="collapse dropdown-header-top">
+                                        <li><a href="">Budget</a></li>
+																				<li><a href="">Budget detail</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -167,8 +169,10 @@
                         </li>
                         <li><a data-toggle="tab" href="#food"><i class="fa fa-cutlery"></i> Food</a>
                         </li>
-                        <!-- <li><a data-toggle="tab" href="#report"><i class="fa fa-bar-chart"></i> Reports</a>
-                        </li> -->
+                        <li><a data-toggle="tab" href="#report"><i class="fa fa-bar-chart"></i> Reports</a>
+                        </li>
+												<li><a data-toggle="tab" href="#budget"><i class="fa fa-money"></i> Budget</a>
+                        </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
                         <div id="orders" class="tab-pane in notika-tab-menu-bg animated flipInX">
@@ -183,11 +187,19 @@
                                 <li><a href="{% url 'restaurant:new_food' %}">Add Food</a></li>
                             </ul>
                         </div>
-                        <!-- <div id="report" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <div id="report" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="">General</a></li>
+                                <li><a href="{% url 'restaurant:reports' %}">General</a></li>
                             </ul>
-                        </div> -->
+                        </div>
+												<div id="budget" class="tab-pane notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+															<li class="active"><a href="{% url 'budget:budget_dashboard' %}">Dashboard</a></li>
+															<li><a href="{% url 'transactions:budget_transaction_list' %}">Transactions</a></li>
+															<li><a href="{% url 'budget:budget_summary_list' %}">Summaries</a></li>
+															<li><a href="{% url 'budget:budget_setup' %}">Setup</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -300,7 +312,7 @@
 		============================================ -->
     <script src="{% static 'js/dialog/sweetalert2.min.js' %}"></script>
     <script src="{% static 'js/dialog/dialog-active.js' %}"></script>
-
+		<script src="{% static 'js/charts/Chart.js' %}"></script>
     <!--  todo JS
 		============================================ -->
     <script src="{% static 'js/todo/jquery.todo.js' %}"></script>
@@ -324,6 +336,6 @@
     <!-- main JS
 		============================================ -->
     <script src="{% static 'js/main.js' %}"></script>
-    {% block extra_js %}{% endblock %} 
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
